@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog - Adnan Ben Mansour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=9f1521fa" />
+  <script>
+    (function(){try{var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
+</head>
+<body>
+  <article class="sheet">
+
+    <header class="topbar">
+      <a class="brand" href="index.html">Adnan Ben Mansour</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="blog.html" class="is-current">Blog</a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme" aria-pressed="false"></button>
+      </nav>
+    </header>
+
+    
+    <h1>Blog</h1>
+    <p class="lede">
+      Notes and side projects. No schedule.
+    </p>
+
+    <div class="filters" id="tag-filters" aria-label="Filter posts by tag">
+      <span class="filters-label">Filter:</span>
+    </div>
+
+    <ul class="posts" id="posts">
+    </ul>
+
+    <p id="empty-msg" style="display:none; margin-top:1.5rem; color:var(--ink-mute); font-size:0.92rem;">
+      No posts match the selected tags.
+    </p>
+
+
+    <footer class="foot">
+      <span>&copy; 2026 Adnan Ben Mansour</span>
+    </footer>
+
+  </article>
+  <script src="nav.js?v=70ab227f"></script>
+  <script src="collapse.js?v=99a173e9"></script>
+  <script src="filters.js?v=ca398d2e"></script>
+</body>
+</html>
