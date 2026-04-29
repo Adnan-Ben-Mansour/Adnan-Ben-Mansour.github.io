@@ -119,6 +119,14 @@ html[data-theme="dark"] body {
   border-bottom: 1px solid var(--rule);
 }
 
+@media (max-width: 640px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+}
+
 .brand {
   font-weight: 700;
   color: var(--ink);
