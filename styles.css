@@ -5,25 +5,25 @@
    ========================================================= */
 
 :root {
-  /* Light theme (used when user toggles) */
+  /* Light theme (default). Built around #AFBFCF — a light blue-grey. */
   --sheet:       #ffffff;
-  --ink:         #111315;
-  --ink-soft:    #3b4046;
-  --ink-mute:    #6b7079;
-  --rule:        #e5e7eb;
-  --accent:      #8a7a5c;          /* warm beige / taupe */
-  --accent-hov:  #6b5f47;
-  --accent-soft: #f1ebe0;
-  --tag-bg:      #f4efe4;
-  --tag-bg-on:   #8a7a5c;
+  --ink:         #15222e;
+  --ink-soft:    #3d5060;
+  --ink-mute:    #66788a;
+  --rule:        #dbe3ea;
+  --accent:      #466480;          /* slate blue (deep #AFBFCF family) */
+  --accent-hov:  #34506a;
+  --accent-soft: #e7eef3;
+  --tag-bg:      #e9eff4;
+  --tag-bg-on:   #466480;
   --tag-fg-on:   #ffffff;
-  --tag-border:  #e6dfce;
-  --selection:   #e8dfca;
+  --tag-border:  #d3dee6;
+  --selection:   #c9dae9;
 
-  /* Background gradient (light) */
-  --bg-1:        #efe5d0;
-  --bg-2:        #ebe0c9;
-  --bg-3:        #f3ead8;
+  /* Background gradient (light) — #AFBFCF is the signature surface color */
+  --bg-1:        #afbfcf;
+  --bg-2:        #c2cfdb;
+  --bg-3:        #d0dae3;
 
   --sans: "Inter", -apple-system, BlinkMacSystemFont,
           "Segoe UI", system-ui, sans-serif;
@@ -36,23 +36,24 @@
 }
 
 :root[data-theme="dark"] {
-  --sheet:       #16181d;
-  --ink:         #ecedf0;
-  --ink-soft:    #b9bdc6;
-  --ink-mute:    #7d8290;
-  --rule:        #262a32;
-  --accent:      #d8c8a8;
-  --accent-hov:  #ebd9b4;
-  --accent-soft: #2a2620;
-  --tag-bg:      #1f1d1a;
-  --tag-bg-on:   #d8c8a8;
-  --tag-fg-on:   #1a1814;
-  --tag-border:  #2c2a25;
-  --selection:   #3e372c;
+  /* Dark theme. Built around #172737 — a deep navy slate (the sheet). */
+  --sheet:       #172737;
+  --ink:         #e7eef4;
+  --ink-soft:    #aebdcb;
+  --ink-mute:    #788a9a;
+  --rule:        #2b3d4f;
+  --accent:      #afbfcf;          /* light blue accent — the light-theme reference */
+  --accent-hov:  #c9d6e1;
+  --accent-soft: #20344a;
+  --tag-bg:      #1d3045;
+  --tag-bg-on:   #afbfcf;
+  --tag-fg-on:   #16222e;
+  --tag-border:  #2d4156;
+  --selection:   #2f4863;
 
-  --bg-1:        #25201a;
-  --bg-2:        #1c1a16;
-  --bg-3:        #211e18;
+  --bg-1:        #1b2f44;
+  --bg-2:        #132130;
+  --bg-3:        #17273a;
 
   --shadow:      0 1px 0 rgba(0,0,0,0.5),
                  0 12px 30px rgba(0,0,0,0.45),
@@ -84,10 +85,10 @@ body {
     radial-gradient(45rem 35rem at 50% 110%, var(--bg-3) 0%, transparent 55%),
     var(--sheet);
   background-attachment: fixed;
-  background-color: #f5f3ef;
+  background-color: #eef2f6;
 }
 html[data-theme="dark"] body {
-  background-color: #0b0d12;
+  background-color: #0d1721;
 }
 
 /* ---------- The sheet ---------- */
@@ -162,11 +163,11 @@ html[data-theme="dark"] .nav {
   line-height: 1;
   transition: color .2s ease;
 }
-/* Light: hover lands on a warm cream sitting on top of the dark beige pill. */
-.nav a:hover { color: #f4efe4; text-decoration: none; }
-html[data-theme="dark"] .nav a:hover { color: #1a1814; }
-.nav a.is-current { color: #f4efe4; font-weight: 500; }
-html[data-theme="dark"] .nav a.is-current { color: #1a1814; }
+/* Light: hover lands on a light tint sitting on top of the dark slate pill. */
+.nav a:hover { color: #f3f7fa; text-decoration: none; }
+html[data-theme="dark"] .nav a:hover { color: #16222e; }
+.nav a.is-current { color: #f3f7fa; font-weight: 500; }
+html[data-theme="dark"] .nav a.is-current { color: #16222e; }
 
 .nav-sep {
   width: 1px;
@@ -183,7 +184,7 @@ html[data-theme="dark"] .nav a.is-current { color: #1a1814; }
   bottom: 0.3rem;
   left: 0;
   width: 0;
-  background: #3a2f1e;
+  background: #33485c;
   border-radius: 999px;
   /* No transition before .is-ready: the first JS-driven positioning must
      snap into place, otherwise the indicator visibly slides from the
@@ -230,7 +231,7 @@ html[data-theme="dark"] .nav-indicator { background: var(--accent); }
   width: 0.9rem;
   height: 0.9rem;
   border-radius: 50%;
-  background: #3a2f1e;
+  background: #33485c;
   transform: translateY(-50%);
   transition: left .25s cubic-bezier(.5,.1,.2,1),
               right .25s cubic-bezier(.5,.1,.2,1),
@@ -559,7 +560,7 @@ html[data-theme="dark"] .avatar {
 /* Dark mode: --accent is light beige; flip the gradient direction so the
    highlight reads as a soft top-light on a warm tile. */
 html[data-theme="dark"] .links-row a.resume-btn {
-  color: #1a1814;
+  color: #16222e;
   background:
     linear-gradient(180deg,
       color-mix(in oklab, var(--accent) 92%, white) 0%,
@@ -571,7 +572,7 @@ html[data-theme="dark"] .links-row a.resume-btn {
     0 8px 22px -12px color-mix(in oklab, var(--accent) 50%, transparent);
 }
 html[data-theme="dark"] .links-row a.resume-btn:hover {
-  color: #1a1814;
+  color: #16222e;
   background:
     linear-gradient(180deg,
       color-mix(in oklab, var(--accent-hov) 95%, white) 0%,
@@ -654,14 +655,17 @@ html:not([data-theme="dark"]) .links-row a.resume-btn:hover {
 }
 
 .block .see-all {
-  margin: 0.6rem 1.1rem 0.9rem;
+  display: block;
+  margin: 0;
+  padding: 0.9rem 1.1rem;
+  border-top: 1px solid var(--rule);
 }
 
 @media (max-width: 640px) {
   .block { margin-left: -0.25rem; margin-right: -0.25rem; }
   .block > h2 { padding: 0.6rem 0.85rem; }
   .block-body { padding: 0.4rem 0.85rem 0.7rem; }
-  .block .see-all { margin: 0.5rem 0.85rem 0.7rem; }
+  .block .see-all { margin: 0; padding: 0.7rem 0.85rem; }
 }
 
 /* ---------- Publication list ---------- */
@@ -1307,17 +1311,17 @@ ul.plain { list-style: none; padding: 0; margin: 0; }
 }
 
 /* Tiny inline syntax tokens (no highlight.js — hand-tinted spans) */
-.tok-kw  { color: #b06b3a; font-weight: 500; }
-.tok-str { color: #6a8055; }
-.tok-num { color: #a06a4f; }
+.tok-kw  { color: #2f6f9e; font-weight: 500; }
+.tok-str { color: #3f8a6e; }
+.tok-num { color: #8a6aa0; }
 .tok-com { color: var(--ink-mute); font-style: italic; }
-.tok-fn  { color: #56708a; }
+.tok-fn  { color: #466480; }
 .tok-cls { color: #7d6db0; }
-html[data-theme="dark"] .tok-kw  { color: #d8a978; }
-html[data-theme="dark"] .tok-str { color: #b3c894; }
-html[data-theme="dark"] .tok-num { color: #d6b292; }
+html[data-theme="dark"] .tok-kw  { color: #8fc0e8; }
+html[data-theme="dark"] .tok-str { color: #8fd0b0; }
+html[data-theme="dark"] .tok-num { color: #c4a9dd; }
 html[data-theme="dark"] .tok-com { color: var(--ink-mute); }
-html[data-theme="dark"] .tok-fn  { color: #97b3d3; }
+html[data-theme="dark"] .tok-fn  { color: #aec6df; }
 html[data-theme="dark"] .tok-cls { color: #c2b1e6; }
 
 /* Figure cell */
